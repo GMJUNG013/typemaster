@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #a0d8ef; /* Sky blue background */
+    background-image: url('https://www.transparenttextures.com/patterns/sky-blue.png'); /* Optional pattern */
+    background-size: cover;
+}
+
+.game-container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #0099cc; /* Sky blue color */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#phrase-container {
+    margin: 20px 0;
+    font-size: 1.2em;
+    border: 1px solid #0099cc; /* Sky blue border */
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 40px;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #0099cc; /* Sky blue border */
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+#wpm-display {
+    font-size: 1.2em;
+    color: #0099cc; /* Sky blue color */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #0099cc; /* Sky blue background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007ab8; /* Slightly darker blue for hover effect */
+}
+
+#phrase-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Adjust as needed */
+    overflow: hidden; /* Hide content that slides out */
+    position: relative;
+}
+
+.word {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.word.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.word.slide-out {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.word.slide-in {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.cursor {
+    color: #f0c674; /* Bright yellow or any contrasting color for the cursor letter */
+    font-weight: bold; /* Make it stand out */
+}
+
+#timer-display {
+    font-size: 20px;
+    margin: 10px;
+}
